@@ -1,0 +1,395 @@
+Linux
+======
+
+
+Demo
+====
+-->SDLC
+--> Agile Meth
+--> DevOps tools
+
+
+
+
+
+Linux class 1
+==============
+
+
+lab setup
+---------
+
+1. Create AWS account 
+
+link: https://docs.google.com/presentation/d/12kD5Rs9MEpfGMqweTB0kTGzXKAz-6N9L/edit?usp=sharing&ouid=111596827579688305692&rtpof=true&sd=true
+
+
+2. Login into your AWS account
+
+3. Launch an EC2 m/c in AWS cloud [server]
+
+4. Connect to that server from local
+
+
+pwd  ---> print working dir
+
+ls
+
+who
+whoami
+
+
+
+SSH TOOLS
+=========
+1. Gitbash   ----> class  : https://git-scm.com/downloads
+2. putty
+3. super putty
+4. MobXterm
+5. Terminal (mac)
+
+
+Gitbash[windows]--ssh-->Ec2[AWS]
+
+
+
+
+
+
+Introduction to Linux
+---------------------
+--> Operating system
+--> Open Source
+--> 1991--> Linus Torlvads
+--> Multi tasking and Multi user
+--> Case sensitive OS
+
+
+Distibrutions/flavors
+======================
+1. Redhat
+2. Ubuntu
+3. CentoS
+4. Debian
+4. Suse Linux
+etc
+-------------------------------------------
+
+
+Linux directory structure
+==========================
+
+/         
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+│   ├── user1
+│   ├── user2
+│   └── ...
+├── lib
+├── opt
+├── proc
+├── root
+├── sbin
+├── tmp
+
+
+/ (Root Directory): The top-level directory that contains all other directories.
+
+/bin: Contains essential binary executables (commands) that are required for basic system operation, available for all users (e.g., ls, cp).
+
+/sbin: Contains system binaries, commands that are typically used by the superuser for system maintenance and configuration.
+
+
+/etc: Houses configuration files for the system and installed applications. This directory is critical for system administration.
+
+/home: Contains home directories for all users. Each user has their own subdirectory here (e.g., /home/user1).
+
+
+/dev: Contains device files, which represent hardware components (e.g., hard drives, USB devices) as files.
+
+
+/root: The home directory for the root user (superuser).
+
+/opt: Used for optional software packages that are not part of the standard distribution, often third-party applications.
+
+
+/lib: Contains shared libraries needed by the binaries in /bin and /sbin. 
+
+/proc: A virtual filesystem that provides information about running processes and system information. Files here are generated dynamically.
+
+/tmp: A directory for temporary files. It is often cleared on reboot.
+
+
+
+NOTE: once your practice is done , please keep in stopped state.
+
+IQ] what is the diff between bin and sbin?
+
+--> /bin: Basic commands available to all users.
+
+EX: ls, cat, cp, mv, rm, etc.
+
+--> /sbin: System management commands, mostly for the root user.
+
+EX: shutdown, reboot, ifconfig, mount, fsck, etc.
+
+IQ] In which dir all the external software's?
+
+Ans: /opt
+
+
+
+
+
+Linux commands
+==============
+
+what is command?
+
+In Linux, a command is a specific instruction given to the operating system to perform a task.
+
+what is a program?
+
+It is a collection of instructions
+
+
+clear
+-----
+
+The clear command in Linux is used to clear the terminal screen. It removes all previous output and gives you a clean, empty screen to work with.
+
+
+
+uname
+—-----
+
+The uname command in Linux is used to display system information. It provides details about the operating system, kernel version, hardware architecture, and more.
+
+
+man [manual pages]
+-----
+The man command in Linux is used to display the manual pages for other commands, programs, and system calls. It's a helpful way to access documentation directly from the terminal.
+
+
+man -f grep
+man ls
+
+
+
+whoami 
+----------
+The whoami command in Linux is a simple utility that displays the username of the currently logged-in user. It’s particularly useful for confirming your identity in a multi-user environment or after switching users.
+
+
+pwd[print working directory]
+-----
+pwd command in Linux stands for "print working directory." It displays the current directory you are in when using the terminal. This is particularly useful for navigating the filesystem and ensuring you know your current location within it.
+
+pwd
+
+
+
+history
+---------
+
+The history command in Linux is used to display a list of commands that have been entered in the current shell session. It can be extremely useful for recalling previous commands, debugging, or re-running tasks without having to retype everything.
+
+
+Display all history: history
+Clear history: history -c
+Display last N commands: history N
+Search history: history | grep <command>
+Run the last command: !!
+Run a specific command by line number: !<line_number>
+Run command that starts with a string: !<string>
+Delete the command for specific number: history -d 500
+
+
+
+
+
+sudo su –
+-----------
+switch to root user
+
+How to switch to normal user ec2-user?
+
+exit
+
+
+
+who
+---
+
+Shows who is logged on the system along with their login details.
+
+id
+--
+
+Provides more detailed information about the user, including user ID (UID), group ID (GID), and group memberships.
+
+
+groups
+------
+
+Displays the groups that the current user belongs to.
+
+
+
+
+
+mkdir 
+------
+
+The mkdir command in Linux is used to create new directories. It's a straightforward but essential command for organizing files within the filesystem. 
+
+
+
+mkdir four
+mkdir -v five
+mkdir one two three
+mkdir one/two/three  → two no such file or directory
+mkdir -p one/two/three
+mkdir "kk funda"
+mkdir -m 755 public
+
+ls
+—
+
+The ls command in Linux (and Unix-like systems) is used to list the contents of a directory. It shows files, directories, and other file system objects in a specified directory or the current working directory if no directory is specified.
+
+
+ls
+ 
+ls -l  [Long Listing Format]
+ls -a  [All files]
+ls -lh [Human readable format]
+ls -r  [Reverse Order]
+ls -t [Sort by time]
+ls -R: List files and directories recursively.
+ls -i [inode: DS and store the file and dir information]
+
+cd
+—
+cd Documents
+cd /
+cd one/two/three
+cd ../home
+cd ../..
+
+cd or cd ~ —> Directly move to home directory 
+
+absolute path: /home/user/documents
+relative path: documents/demo
+
+cd -  —> current to previous and previous to current
+
+
+
+touch 
+------- 
+Used to create an empty file.
+touch demo.txt
+touch one two three
+
+
+rmdir 
+------ 
+rmdir test → empty directory only
+
+rm 
+—
+The rm command is used to remove files and directories, regardless of whether they are empty or not.
+
+rm file_name
+rm -rf directory_name
+
+
+
+vi 
+–
+The vi command is a powerful and widely used text editor in Linux and Unix-like operating systems
+
+save:
+
+dont save:
+
+
+
+
+
+
+cat 
+—-
+
+The cat command in Linux is used to concatenate and display the contents of files.
+
+
+cat jayesh.txt
+cat file1 file2
+cat * 
+cat -n file_name
+cat > newfile_name  —> create a new file add content to this, ctrl+D
+cat >> existfile.txt
+
+>file.txt  —> Nullify the file
+
+cat app1.log app2.log > merged_file.txt  —> Override
+cat file_name1 >> file_name2 —-> append
+
+
+tac file_name
+
+cp : It will copy file contents and dir to one dir to another dir
+—-
+ 
+cp devops.txt DevOps/
+cp -R Python DevOps/
+
+Requirement: How to copy all the java file to dir
+
+
+
+mv [renaming and moving one dir to another dir]
+—-
+mv python.txt devops.txt
+mv DevOps/ Python/
+
+
+tail
+—
+used to display last N number of lines in a file
+tail file.txt —> last 10 lines displayed
+
+tail -n 3 state.txt
+or
+tail -3 state.txt
+tail state.txt capital.txt
+tail state.txt -q capital.txt  --> To skip the second file message
+
+
+head
+—----
+used to display first N number of lines in a file
+head file.txt —> first 10 lines displayed
+
+head -n 3 state.txt
+or
+head -3 state.txt
+head state.txt capital.txt
+head state.txt -q capital.txt
+
+IQ] we have 100 lines file, How to display 35 to 50 lines of data?
+
+Ans:  head -50 file.txt | tail -15 
+
+sort command
+—----------------
+sort file.txt
+sort -r example.txt
+sort -k 2 data.txt  → second column sorted
+
+sort -u file.txt  --> Remove duplicates

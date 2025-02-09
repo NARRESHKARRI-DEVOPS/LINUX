@@ -1,0 +1,162 @@
+echo 
+—----
+echo hello java
+echo hello        java
+echo "hello       java"
+
+
+tr[translate] command
+—---------------------
+
+cat demo.txt |sort |tr [a-z] [A-Z]  --> lower case to uppercase.
+
+
+
+
+
+
+
+Linux editors
+===========
+vi
+—
+
+vi demo.txt
+:wq
+:q!
+:q
+
+vim
+—-
+vim demo.txt
+sudo su -
+yum install vim -y
+vim demo.txt
+what is the diff b/w vi and vim?
+sudo su -
+cp /etc/sudoers /home/ec2-user
+ls -l
+chown ec2-user:ec2-user sudoers
+chmod 755 sudoers
+exit
+
+
+NOTE:   :se nu  or :se nonu
+
+goto to line number
+—----------------------
+:90
+:87
+
+to search the data
+—-------------------
+/data
+How to delete line?
+—---------------------
+dd in cmd mode
+press u for undo
+
+
+nano
+—---
+nano demo.txt
+yum install nano -y
+nano demo.txt
+
+ctrl+o  → to save
+ctrl+x  → close the file
+
+find
+—-
+How to search empty files in the current directory?
+find . -type f -empty
+find ~ -type f -empty
+find /tmp -type f -empty
+#find / -type f -empty
+
+find . -type d -name <dirName>
+
+
+find . -name deployment.yaml
+find . -name deployment.yaml → ignore case 
+find . -type f -perm 0777
+find . -mtime 1 : It will find all the files modified exact 1 day in current dir
+find . -mtime -1 : It will find all the files modified less than 1 day in current dir
+find . -mtime +1 : It will find all the files modified more than 1 day in current dir
+
+find ./ -type f -name "*.txt"
+
+sed command [stream editor ]
+—-------------------------------------
+
+->searching, find and replace, insertion or deletion. 
+-> SED you can edit files even without opening them
+
+$sed 's/unix/linux/' abc.txt  →Replacing or substituting string
+
+$sed 's/unix/linux/2' abc.txt → Replacing the nth occurrence of a pattern in a line
+
+$sed 's/unix/linux/g' abc.txt  →Replacing or substituting string globally
+
+$sed '3 s/unix/linux/' abc.txt  →Replacing string on a specific line number
+
+$sed '3 s/am/was/p' sed.txt →Duplicating the replaced line with /p flag
+
+$ sed -n 's/am/was/p' sed.txt  → printing only the replaced lines
+
+$sed '1,3 s/unix/linux/' abc.txt  →Replacing string on a range of lines
+
+$ sed '5d' filename.txt → Deleting lines from a particular file
+
+$ sed '3,6d' filename.txt → To Delete line from range x to y
+
+
+who [diaplay the current users working on system]
+—--
+who -H  —> Header will be displayed
+
+w
+==
+cat /proc/cpuinfo  —> To get the cpu info
+single core cpu >1 —> more cpu usage
+load average: 0.08, 0.15, 0.16
+            1st min, 5th min, 15th min
+
+uptime [to check the load avg]
+=====
+
+users [To list the users who are already logged in]
+====
+whoami
+=======
+
+whereis
+=======
+binary files
+and manual pages
+
+whereis mkdir
+/usr/bin/ls  → binary files
+ /usr/share/man/man1/ls.1.gz → Manual pages
+
+date
+====
+date
+sudo date -s “20240617” → to change the date
+
+
+timedatectl  → to see the time zone
+=========
+
+df
+==
+df
+df -h
+df -Th
+NOTE: temp directory need to clean on weekly basis
+
+du
+==
+du 
+du -h Ansible/
+du -sh Ansible/ —> summary of only main directory

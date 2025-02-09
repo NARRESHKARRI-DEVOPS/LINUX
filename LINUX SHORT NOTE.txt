@@ -1,0 +1,205 @@
+SDLC
+AGILE
+DevOps
+
+what is Linux?
+
+Linux Flavours:
+-------------
+1. Cenots
+2. Ubuntu
+3. Debean
+4. Susi_linux
+5. AWS_Linux
+6. Fidora
+
+etc...
+
+
+Linux Directory Structure
+
+/Root - as admin
+
+/home  - all users information.
+/lib - Systemlibrary files will be there.
+/bin - all commands information will store here, all binary files will store here. for users.
+/sbin - it is system related and admin can use it, sbin can give permissions. for admins
+/etc - security related files, sudoers files, confidential files will there.
+/opt - any external servers can be installed, as a good practice, not an compulsary installation.
+/proc - process related information will be there.
+/tmp - temporary files will be there, it will be moved to there.
+/src: Contains source code, typically for the Linux kernel and other software.
+/var : external user configuration
+
+command:
+------------
+command is nothing but instruction.
+
+1. uname - it is used to disply the system - i.e. output will come linux.
+
+2. man - manual pages, it will tell us how to use other command.
+
+3. whoami - it will tel us the status in the terminal by displaying username.
+
+4. pwd - print working directory.
+
+5. history - it will disploy the previous commands.
+
+6. history -d -3 "it will be deleted the fileno. 3, in history".
+
+7. sudo su - -->Normal User to Root user. (sudo command is very important) # symbol and $ for normal.
+
+8.  exit - root user to normal user.
+
+9. mkdir - make directory.
+
+10. ls - list the directory and files.
+
+11. -v : it will inform us the action done, for ex: mkdir -v kkfunda, it will inform us folder mkfuda created.
+
+12. mkdir "kk-funda" - it will be created in one directory.
+
+13. mkdir -p /kk-duda/gsp/usr - "-p" will tel us the create child folders directory.
+
+14. cd .. : one step back
+
+15. cd : we will go directly to home directory.
+
+16. cd - : recent ga performchesina actions ki shift avvataniki.
+
+17. touch : command is help us create empty file.
+
+18. vi : command is user to create file and editor modifications.
+
+19. cat : disply the inside the file.
+
+20. wq : save the data and quite.
+
+21. ls -l : it long listing.
+
+22. ls -la : it will list all the files, hidden files, hidden extensions
+
+23. ls -lh : human readable format.
+
+24. ls -lrth : it will disply the files with human reable format and time based.(long listing, reverorder, time - timebased, h-human 
+
+25. inode : i node is a data structure, i node files and dirctory information.
+
+26. ls -li : disply the inode commands.
+
+27. rmdir : remove directory only empty directory
+
+28. rm -rf "directory name" : remove with files in directory.
+
+Note : command not found will disply if command not available in Bin Dir. All the commands we are using are saved in BIN Folder.
+
+Note : if we not found any commnds an system, we need to install by sudo previlage.
+
+29. cat -n test.java : it will disply the line number.
+
+30. >test.java : remove the all data in file, but file will not be deleted.
+
+31. cat * : will disply the data in all files in that directory.
+
+32. tail : it will display the last 10 lines by default.
+
+33. tail -n 2: it will disply the only last 2 files.
+
+34. head : head is also same like tail.
+
+35. tail -n 3 toolts.txt -q all_error.txt : it will not disply brackets in two files.
+
+36. head -20 toolts.txt | tail -10 " it will disply the files between 10 and 20.
+
+37. grep - for searching the directory.
+
+38. grep -i : case insestive.
+
+39. grep -iE "brooklyn|test.java" all_error.txt
+
+40. -iE - Ignore and eighter.
+
+41. grep -inE "brooklyn|test.java" all_error.txt - it will disply the line number 
+
+42. grep -ic - total number of lines count.
+
+43. grep -il - the world matching the file will be displayed.
+
+44. gre -io "brooklen" only matching word will be deployed.
+
+45. grep -iv "verbose mode" - it will disply the line what we selected.
+
+46. grep -iA3 - it will be displayed 3 lines after the error displayed in log.
+
+47. grep -iB3 - it will be dsiplayed before 3 lines of line.
+
+48. grep -iC3 - before 3 lines and after 3 lines.
+
+49. wc <file name> - 13 303 1706 - 
+
+50. permission	
+	read -4
+	write - 2
+	execute - 1
+	
+	file base permission - 0666 - 0002 = 664
+	base permission for dir - 0777 -0022 = 755
+	file is alwasy smaller than folder.
+	
+	
+50. umask - default value is - 0022
+
+51. chmod -R 444 - for folders - should be recursive mode only.
+
+52. Chown - change owner - it always open with Root User.
+
+53. sudo chown *.java - all the files.
+
+54. Chgrp - change the group (by default group name is whell) by default grop /
+
+for examples, searching (cp *.java ansible / )
+
+ls -l ansible/
+
+in VIM editor - set nu - will give total numbers
+
+
+55. diff first file and send file
+
+56. CP is used to \ is like copy from here to another
+
+57. rm -f ansible / removing the fie.
+
+58. MV is cut and paste., renaming is also we used the command MV.
+
+Note : ASCI - americal stanard code information.
+
+59. file - command is used to what type of data inside that.
+
+60. ln - link.
+
+
+70. Soft link & Hard Link:
+		Hard Link:
+		----------
+		- ln gsp.txt gsp1.txt (for linking the hard lin)
+		- Note: The i node number is same in the hard link.
+		- if original file deleted still we can access normal file.
+		- Hard link will not be allocated to files only, not for directories.
+		
+		Soft link:
+		-----------
+		- ln -s gsp.txt gsp1.txt (for linking the soft link).
+		- I node number is different.
+		- data cannot be accesse, once deleted the original file.
+		- soft link used for files and directories.
+		
+71. ls -li - to know inode number.
+
+72. echo : echo is the command it will help us the display the command.
+
+73. tac : tac is reverse order for cat. 
+
+74. tr : translate command - lower case words needs to be converted to upper case. {tr [a-z][A-Z] vice-versa.
+
+75. vi

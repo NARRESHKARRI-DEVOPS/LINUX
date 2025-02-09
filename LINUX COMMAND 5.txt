@@ -1,0 +1,146 @@
+
+hostname[ every server has different]
+=========
+
+ip-172-31-32-138.ap-south-1.compute.internal
+hostname -i [display only ip address]
+
+
+
+
+
+
+
+whatis
+======
+→ man gives more information, whatis giving less information
+whatis ls
+whatis mkdir
+
+
+
+service
+======
+jenkins —>jenkins
+oracle db → oracle 
+Appache http server —>httpd
+                                  —>crond
+                                  —> sshd
+
+How to display listof services available
+=================================
+systemctl list-unit-files  ->type q for quit
+
+service service_name options(start|stop|status|restart)
+systemctl options servicename
+ex: systemctl status sshd
+
+what is the diff?
+—-------------------
+systemctl —> RHEL 7.x
+service —> old one
+
+service sshd start [Only root user]
+service sshd stop
+
+last
+===
+last
+last -R ec2-user  → to see for particular user
+last -F  → login logout times for user
+
+
+To see how much time all users logged in.
+NOTE: dont tell lays to manager.
+
+===============================================
+
+NOTE: In linux for all the commands one processes, one process will be created
+
+ps[process status]
+===
+ps
+Result contains four columns of information. Where, 
+PID – the unique process ID 
+TTY – terminal type that the user is logged into 
+TIME – amount of CPU in minutes and seconds that the process has been running 
+CMD – name of the command that launched the process.
+ps -a 
+ps -ef  —> formatted way it will display for all the users
+
+How to get only particular user process ids
+—--------------------------------------------------------------
+ps -ef|grep -i “ec2-user”
+ps -f|grep -i “jenkins”
+
+kill 
+===
+
+kill -l [multiple signals]
+
+kill -9 processid 
+kill -ef |grep “tomcat”
+
+NOTE: kill used for other purposes also
+
+
+
+
+top [Monitor the server resource utilization]
+—
+top
+NOTE: hard disk utilization , we are seeing with df -h command , top command used to display cpu information
+
+
+zip
+===
+zip -r ansible.zip Ansible/ 
+
+unzip
+=====
+rm -r Ansible/
+unzip ansible.zip
+
+tar
+===
+tar -cvf ansible.tar  Ansible [create verbose filesystem]
+tar -xvf ansible.tar  Ansible [extract verbose filesystem]
+
+
+
+
+useradd [creating users]
+====================
+only ROOT user can execute
+
+ls -l /home
+sudo useradd kkfunda
+cat /etc/passwd	 —> To see user information
+cat /etc/group   —-> Group infomation
+cat /etc/shadow  → user credentials
+
+
+
+RHEL 7.x → UID —> 1000
+RHEL → UID —>500 
+
+
+
+passwd [root user]
+======
+
+cat /etc/shadow [Here all passwords information will store]
+passwd kkfunda
+
+To change for particular user as a normal user
+
+$passwd
+old
+new
+new confirmation
+
+
+chage
+=====
+chage kkfunda  —> set the expiry date
+cat /etc/shadow —> to see attributes are updated or not.

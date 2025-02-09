@@ -1,0 +1,89 @@
+Directories
+—-----------
+chmod 444 DevOps/ [Only parent dir permissions will change]
+chmod ugo+x DevOps/
+
+
+ls -lrth DevOps/
+
+chmod -R 444 DevOps/ → Sub directories will change
+
+ Q: 777 [numbers will override]
+     ugo+rwx [ will not override]
+
+chown  [ONLY ROOT USER can used]
+======
+
+The chown command in Linux is used to change the ownership of files and directories. The name stands for "change owner." This command allows you to specify a new owner (and optionally a new group) for one or more files or directories.
+
+
+chown root devops.txt   → Run from Root
+
+ sudo su -  —> pointing to root user home dir
+ sudo su      —> pointing to the normal user only
+
+what is the root user home directory?
+
+/ —> parent dir or root dir
+/home/root  —> in home normal users will store
+/root  —> root user home directory
+
+
+sudo chown root devops.txt
+sudo chown -R root DevOps
+
+chown root *.java
+
+
+
+
+chgrp [only root users]
+======
+
+chgrp wheel devops.txt
+
+cat /etc/group  —> all the groups available
+
+chgrp -R wheel DevOps
+
+chown ec2-user:ec2-user devops.txt --> both at a time change for file
+chown ec2-user:ec2-user DevOps  --> both at a time change for dir
+
+
+
+
+
+file [check the what type of file]
+====
+file demo.txt
+file test.txt
+
+
+
+diff command
+============
+
+ln [link]
+========
+
+The ln command in Linux is used to create links between files. There are two types of links: hard links and symbolic (or soft) links.
+
+
+
+jio
+/var/lib/logs/bill.log
+
+/tmp/
+
+ln originalfile linkfile   —>HARD LINK
+ln -s originalfile linkfile   —>SOFT LINK
+
+hard link                               soft link[symbolic link]
+—---------      		        	—----------------------------
+1. inode number is same                            1. inode number is differnet
+2. original file delete, we can access normal file 2. soft not possible
+3. It only for files		                       3. Its for files and directories
+4. data is in sync                                 4. data is in sync
+
+ln devops.txt hardlink.txt
+ln -s devops.txt softlin.txt    —> It will start with L

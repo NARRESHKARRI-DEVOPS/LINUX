@@ -1,0 +1,141 @@
+How to uninstall a package?
+===========================
+
+yum remove tree -y
+
+    or
+
+dnf remove tree -y
+
+
+groupadd devops
+==============
+/etc/group —->store all group information, for user also one group is created.
+→ In /home/  for only users
+
+usermod [add users to the group]
+========
+sudo usermod -aG devops kkfunda
+
+sudo lid -g devops  —> How many users are added to this group
+
+How to check user belongs to how many groups?
+========================================
+id kkfunda
+or
+groups kkfunda
+
+
+
+su [switch user]
+=============
+sudo su -  —>switched to root user
+Normal user to normal user —> password required
+Normal user to root user  —-> password required
+Root user to normal user —-> password not required
+ex:
+
+su - kkfunda
+su - ec2-user
+su - root
+sudo
+====
+
+
+How to give sudo access to normal user?
+
+sudo cat /etc/sudoers
+
+diff b/w vi and visudo
+—---------------------------
+#visudo —-> file is going to lock until user while update[Add user here], Add kkfunda user as a root
+
+sudo useradd krishna —-> run it from kkfunda user
+sudo passwd krishna —-> Give password to krishna
+
+userdel
+=======
+sudo userdel -r krishna
+
+groupdel 
+========
+groupadd QA
+sudo groupdel QA —-> delete the group
+
+NOTE: 
+what is the diff b/w
+ sudo su -  —> not ask password
+ su -  → will ask password
+su - root → will ask password
+
+
+more command [loads the entire file]
+—------------------
+more filename
+
+Enter key: to scroll down line by line.
+Space bar: To go to the next page.
+b key: To go to back one page. 
+
+less command [not loading the entire file]
+—-----------------
+2. Screen Navigation
+Ctrl + f : forwards one window
+Ctrl + d : forwards half window
+Ctrl + b : backwards one window
+Ctrl + u : backwards half window
+3. Line Navigation
+to move forward or backward line by line
+j : forward by one line
+k : backward by one line
+
+uniq command
+=============
+Removes the consecutive duplicates.
+
+ wc -l < Names.txt
+
+tee command
+============
+
+cat file.txt | tee copy.txt
+
+zcat command
+============
+zgrep command
+=============
+
+ nohup sh demo.sh &
+====================
+ping google.com
+================
+yum update
+==========
+lscpu —>display the cpu information
+=====
+
+lshw →to see the hardware information
+====
+
+sudo shutdown
+=============
+watch -d free
+=============
+cut command
+===========
+cut -b 1,2,3 state.txt
+cut -b 1-3,5-7 state.txt
+ cut -c 2,5,8 states.txt  —> 2nd, 5th and 8th characters.
+cut -c 1-7 state.txt
+cut -c 1- state.txt —> All characters
+cut -c -5 state.txt —> first 5 characters
+
+
+
+cal
+==
+cal -y —> to shows the complete year
+cal 08 2023
+cal 1994
+ cal -3 [Shows calendar of previous, current and next month]
+ cal -j 2024 [1to 366]
